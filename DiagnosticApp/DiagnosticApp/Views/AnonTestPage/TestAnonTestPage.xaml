@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:DiagnosticApp.CustomEntry"
+             x:Class="DiagnosticApp.Views.AnonTestPage.TestAnonTestPage"
+             Title="Тестирование">
+    <ContentPage.Content>
+        <StackLayout>
+                <StackLayout Margin="0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+                    <Frame Margin="20, 10" CornerRadius="5" BorderColor="{StaticResource BorderColor}">
+                        <StackLayout>
+                            <Label Style="{StaticResource LableStyle}" Margin="0, 0" Padding="50,0" HorizontalOptions="Center" Text="Что вас беспокоит" />
+                            <ScrollView>
+                                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                                    <Frame Style="{StaticResource FrameStyle}" HorizontalOptions="FillAndExpand">
+                                    <controls:CustomEntry x:Name="txtName" Keyboard="Text" Style="{StaticResource EntryStyle}" Text=""></controls:CustomEntry>
+                                    </Frame>
+                                    <Button BorderRadius="6" TextColor="White" Clicked="ButtonClearEntry_Clicked" BackgroundColor="{StaticResource WelcomePageColor}" Text="X" WidthRequest="45"></Button>
+                                <Button BorderRadius="6" TextColor="White" BackgroundColor="{StaticResource WelcomePageColor}" Text="OK" WidthRequest="45"></Button>
+                                </StackLayout>
+                            </ScrollView>
+                            <Label Text="Список симптомов" IsVisible="true" HorizontalOptions="Center" FontSize="Large" />
+                        <ListView ItemsSource="{Binding SymptomList}" SeparatorVisibility="Default" HorizontalScrollBarVisibility="Always" VerticalScrollBarVisibility="Always">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label Text="{Binding Name}" TextColor="#000040" FontSize="Small" VerticalTextAlignment="Center"/>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                        </StackLayout>
+                    </Frame>
+                            <Button Margin="100,20" BorderRadius="6" WidthRequest="200" IsVisible="true" TextColor="White" BackgroundColor="{StaticResource WelcomePageColor}" Text="Продолжить" Clicked="GoToResult"></Button>
+                </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

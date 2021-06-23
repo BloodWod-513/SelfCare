@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiagnosticApp.WelcomePage.AboutPage"
+             Title="О нас" IconImageSource="about.png">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <ScrollView>
+                <StackLayout Margin="0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Frame Margin="20, 0" CornerRadius="5" BorderColor="{StaticResource BorderColor}">
+                        <StackLayout>
+                            <Label Style="{StaticResource LableTestStyle}" Text="Мобильное приложение SelfCare предоставляет ряд возможностей как для пациента, так и для медицинского специалиста.
+Пациентам предлагается возможность первичной онлайн-диагностики и определения диагноза с последующим поиском подходящего специалиста.
+Для специалистов приложение призвано обеспечить пространство для медицинской онлайн-практики." FontAttributes="None"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

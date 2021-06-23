@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:DiagnosticApp.CustomEntry"
+             x:Class="DiagnosticApp.Views.ProfilePage.ProfilePage"
+             Title="Личный кабинет">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Style="{StaticResource LableStyle}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Text="Личный кабинет" />
+            <Button Margin="100,20" BorderRadius="6" WidthRequest="200" BackgroundColor="#F7F7F7" Text="Работать тут врачем"></Button>
+            <Button Margin="100,20" BorderRadius="6" WidthRequest="200" x:Name="LogoutButton" BackgroundColor="#F7F7F7" Text="Выйти" Clicked="Logout"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

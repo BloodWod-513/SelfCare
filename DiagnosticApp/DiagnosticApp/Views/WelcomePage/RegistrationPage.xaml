@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DiagnosticApp.CustomEntry" xmlns:viewmodels="clr-namespace:DiagnosticApp.ViewModels" x:DataType="viewmodels:AccountViewModel"
+             x:Class="DiagnosticApp.WelcomePage.RegistrationPage"
+             Title="Создание аккаунта">
+    <ScrollView>
+        <StackLayout Margin="0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Frame Margin="20, 0" CornerRadius="5" BorderColor="{StaticResource BorderColor}">
+                <StackLayout x:Name="friendStack">
+                    <Label Style="{StaticResource LableStyle}" Text="Логин (Эл. почта)" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtEmail" Keyboard="Email" Style="{StaticResource EntryStyle}" Text="{Binding Login}"></controls:CustomEntry>
+                    </Frame>
+                    <Label Style="{StaticResource LableStyle}" Text="Пароль" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtPassword" Keyboard="Text" IsPassword="True" Style="{StaticResource EntryStyle}" Text="{Binding Password}"></controls:CustomEntry>
+                    </Frame>
+                    <Label Style="{StaticResource LableStyle}" Text="Подтвердите пароль" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtConfirmPassword" Keyboard="Text" IsPassword="True" Style="{StaticResource EntryStyle}" Text="{Binding ConfirmPassword}"></controls:CustomEntry>
+                    </Frame>
+
+                    <Button Margin="100,20" BorderRadius="6" WidthRequest="200" x:Name="createAccountButton" TextColor="White" BackgroundColor="{StaticResource WelcomePageColor}" CommandParameter="{Binding}" Text="Продолжить" Clicked="Registration"></Button>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

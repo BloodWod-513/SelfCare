@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiagnosticApp.WelcomePage.WelcomePage"
+             Title="Тестирование"
+             IconImageSource="test.png">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="WelcomeButtonStyle" TargetType="Button">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="40, 0, 40, 30"/>
+                <Setter Property="HeightRequest" Value="90"/>
+                <Setter Property="BackgroundColor" Value="#000040"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="BorderColor" Value="#4CAF50"/>
+                <Setter Property="BorderWidth" Value="0"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+
+        <Image Source="mainIcon.png" VerticalOptions="CenterAndExpand" Margin="0,100,0,0"/>
+        <StackLayout VerticalOptions="EndAndExpand" Margin="0,0,0, 30" >
+            <Button Text="Пройти тестирование" Clicked="OnAnonTestButtonClicked" Style="{StaticResource WelcomeButtonStyle}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

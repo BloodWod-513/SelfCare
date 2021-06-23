@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:DiagnosticApp.CustomEntry" xmlns:viewmodels="clr-namespace:DiagnosticApp.ViewModels" x:DataType="viewmodels:AccountViewModel"
+             x:Class="DiagnosticApp.Views.AnonTestPage.EnterInfoAnonTestPage"
+             Title="Тестирование">
+    <ContentPage.Resources>
+        <ControlTemplate x:Key="RadioButtonTemplate">
+            <Frame BorderColor="White"
+                   BackgroundColor="White"
+                   HasShadow="False"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Start"
+                   Padding="0">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CheckedStates">
+                            <VisualState x:Name="Checked">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor"
+                                            Value="#000040" />
+                                    <Setter TargetName="check"
+                                            Property="Opacity"
+                                            Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Unchecked">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                                            Value="White" />
+                                    <Setter Property="BorderColor"
+                                            Value="White" />
+                                    <Setter TargetName="check"
+                                            Property="Opacity"
+                                            Value="0.5" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+                <Grid Margin="4"
+                      WidthRequest="100">
+                    <Grid WidthRequest="18"
+                          HeightRequest="18"
+                          HorizontalOptions="End"
+                          VerticalOptions="Start">
+                        <Ellipse Stroke="#000040"
+                                 Fill="white"
+                                 WidthRequest="16"
+                                 HeightRequest="16"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center" />
+                        <Ellipse x:Name="check"
+                                 Fill="#000040"
+                                 WidthRequest="8"
+                                 HeightRequest="8"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center" />
+                    </Grid>
+                    <ContentPresenter />
+                </Grid>
+            </Frame>
+        </ControlTemplate>
+
+        <Style TargetType="RadioButton">
+            <Setter Property="ControlTemplate"
+                    Value="{StaticResource RadioButtonTemplate}" />
+        </Style>
+    </ContentPage.Resources>
+    <!-- Page content -->
+    <ScrollView>
+        <StackLayout Margin="0,10,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Frame Margin="20, 0" CornerRadius="5" BorderColor="{StaticResource BorderColor}">
+                <StackLayout RadioButtonGroup.GroupName="Sex">
+                    <Label Style="{StaticResource LableStyle}" Text="Ваш пол" HorizontalOptions="Center" />
+                    <Frame Margin="20, 0" HasShadow="False">
+                        <StackLayout Orientation="Horizontal">
+                            <RadioButton Value="man" Margin="0, 0, 25, 5" IsChecked="True" CheckedChanged="OnSexRadioButtonCheckedChanged">
+                                <RadioButton.Content>
+                                    <StackLayout>
+                                        <Image Source="man.png"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="CenterAndExpand" />
+                                        <Label Text="Мужской"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="End"
+                                       FontSize="Medium"
+                                       FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </RadioButton.Content>
+                            </RadioButton>
+                            <RadioButton Value="woman" Margin="25, 0, 0, 5" CheckedChanged="OnSexRadioButtonCheckedChanged">
+                                <RadioButton.Content>
+                                    <StackLayout>
+                                        <Image Source="woman.png"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="CenterAndExpand" />
+                                        <Label Text="Женский"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="End"
+                                       FontSize="Medium"
+                                       FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </RadioButton.Content>
+                            </RadioButton>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+            <Frame Margin="20, 0" CornerRadius="5" BorderColor="{StaticResource BorderColor}">
+                <StackLayout>
+                    <Label Style="{StaticResource LableStyle}" Text="Ваш возраст" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <DatePicker x:Name="dateOfBirth" TextColor="{StaticResource WelcomePageColor}"/>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+            <Frame Margin="20, 0" CornerRadius="5" BorderColor="{StaticResource BorderColor}">
+                <StackLayout>
+                    <Label Style="{StaticResource LableStyle}" Text="Ваш вес" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtWeight" Keyboard="Numeric" Style="{StaticResource EntryStyle}" Text="{Binding Weight}" TextChanged="WeightEntry_ValueChanged"></controls:CustomEntry>
+                    </Frame>
+                    <Slider x:Name="weightSlider" Minimum="0" Maximum="150" Value="50" ValueChanged="Slider_WeightValueChanged"
+            MinimumTrackColor="#000040" ThumbColor="#000040" MaximumTrackColor="Black" Margin="0, 12, 0, 0"/>
+                </StackLayout>
+            </Frame>
+            <Button Margin="100,20" BorderRadius="6" WidthRequest="200" TextColor="White" Clicked="Button_Clicked" CommandParameter="{Binding}" BackgroundColor="{StaticResource WelcomePageColor}" Text="К тесту"></Button>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

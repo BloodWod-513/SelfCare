@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiagnosticApp.Views.AnonTestPage.ResultTestPage"
+             Title="Тестирование">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="0,10" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+                <Label Text="Список врачей" IsVisible="true" HorizontalOptions="Center" FontSize="Large" />
+                <Frame Margin="20, 10" CornerRadius="5" BorderColor="{StaticResource BorderColor}">
+                    <StackLayout>
+                        <ListView x:Name="doctorList" HasUnevenRows="True" SeparatorVisibility="Default" HorizontalScrollBarVisibility="Always" VerticalScrollBarVisibility="Always">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <StackLayout Padding="10, 10, 10, 10">
+                                                <Label Text="{Binding Name}" TextColor="#000040" FontSize="Small"/>
+                                                <Label Text="{Binding Specialization}" TextColor="#000040" FontSize="Small"/>
+                                                <Label Text="{Binding WorkExperience}" TextColor="#000040" FontSize="Small"/>
+                                            </StackLayout>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackLayout>
+                </Frame>
+                <Button Margin="100,20" BorderRadius="6" WidthRequest="200" IsVisible="true" TextColor="White" BackgroundColor="{StaticResource WelcomePageColor}" Text="Продолжить"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

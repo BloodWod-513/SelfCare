@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiagnosticApp.Views.AnonTestPage.StartAnonTestPage"
+             Title="Тестирование">
+    <ScrollView>
+        <StackLayout Margin="0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Style="{StaticResource LableStyle}" Margin="10, 15, 10, 5" Text="Cогласие на обработку персональных данных и их условия использования." FontAttributes="Bold" TextColor="Black"/>
+            <Label Style="{StaticResource LableTestStyle}" Text="• Результат обследования не является диагнозом:"/>
+            <Frame Margin="20, 0" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label Style="{StaticResource LableTestStyle}" Text="Обследование предназначено для информационных целей и не является квалифицированным медицинским заключением." FontAttributes="None"/>
+                </StackLayout>
+            </Frame>
+            <Label Style="{StaticResource LableTestStyle}" Text="• Не используйте в чрезвычайных ситуациях:"/>
+            <Frame Margin="20, 0" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label Style="{StaticResource LableTestStyle}" Text="Обследование предназначено для информационных целей и не является квалифицированным медицинским заключением." FontAttributes="None"/>
+                </StackLayout>
+            </Frame>
+            <Label Style="{StaticResource LableTestStyle}" Text="• Ваши данные безопасны:"/>
+            <Frame Margin="20, 0" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label Style="{StaticResource LableTestStyle}" Text="Обследование предназначено для информационных целей и не является квалифицированным медицинским заключением." FontAttributes="None"/>
+                </StackLayout>
+            </Frame>
+            <StackLayout Orientation="Horizontal" Margin="15, 10, 15, 0">
+                <CheckBox x:Name="Agreement" IsChecked="true" />
+                <Label Text="Я ознакомился с предупреждениями и согласен продолжить" FontAttributes="None"/>
+            </StackLayout>
+            <Button Margin="100,20" BorderRadius="6" WidthRequest="200" x:Name="nextTestButton" TextColor="White" Clicked="OnEnterInfoAnontTestPageButtonClicked" BackgroundColor="{StaticResource WelcomePageColor}" Text="Продолжить"></Button>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
