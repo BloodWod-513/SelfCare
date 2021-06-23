@@ -11,15 +11,10 @@ namespace DiagnosticApp.Views.ProfilePage
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilePage : ContentPage
     {
-
-
         public ProfilePage()
         {
             InitializeComponent();
         }
-
-
-
         private void Logout(object sender, System.EventArgs e)
         {
             Barrel.Current.EmptyAll();
