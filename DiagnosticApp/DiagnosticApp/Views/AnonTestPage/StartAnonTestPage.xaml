@@ -25,7 +25,7 @@
                 </StackLayout>
             </Frame>
             <StackLayout Orientation="Horizontal" Margin="15, 10, 15, 0">
-                <CheckBox x:Name="Agreement" IsChecked="true" />
+                <CheckBox x:Name="Agreement" IsChecked="False" />
                 <Label Text="Я ознакомился с предупреждениями и согласен продолжить" FontAttributes="None"/>
             </StackLayout>
             <Button Margin="100,20" BorderRadius="6" WidthRequest="200" x:Name="nextTestButton" TextColor="White" Clicked="OnEnterInfoAnontTestPageButtonClicked" BackgroundColor="{StaticResource WelcomePageColor}" Text="Продолжить"></Button>

@@ -18,7 +18,7 @@ namespace DiagnosticApp.Views.AnonTestPage
         {
             if (!Agreement.IsChecked)
             {
-                Agreement.BackgroundColor = Color.Red;
+                _ = DisplayAlert("Ошибка", "Подтвердите согласие", "ОК");
                 return;
             }
             _ = Navigation.PushAsync(new EnterInfoAnonTestPage(ViewModel));
